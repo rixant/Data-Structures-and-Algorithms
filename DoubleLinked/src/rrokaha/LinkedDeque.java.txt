@@ -1,0 +1,109 @@
+/**
+ * Rishant Rokaha
+ * Professor Vohra
+ * Data Structures and Algorithms
+ * 11 November 2002
+ * Assignment 8
+ */
+
+package rrokaha;
+
+public class LinkedDeque<T> implements DequeInterface<T> {
+  private DLNode firstNode;
+  private DLNode lastNode;
+
+  //constructor
+    public LinkedDeque() {
+        firstNode = null;
+        lastNode = null;
+    } // end default constructor
+
+    // adds the element at the front
+    @Override
+    public void addToFront(T newEntry) {
+        DLNode newNode = new DLNode(newEntry, firstNode, null);
+        if (isEmpty()) lastNode = newNode;
+        else
+            firstNode.setPreviousNode(newNode);
+        firstNode = newNode;
+
+    }
+
+    //adds the element at the back
+    @Override
+    public void addToBack(T newEntry) {
+        DLNode newNode = new DLNode(newEntry,null, lastNode);
+        if (isEmpty())
+            firstNode = newNode;
+        else
+            lastNode.setNextNode(newNode);
+        lastNode = newNode;
+
+    }
+
+    //removes the element from front
+    @Override
+    public T removeFront() {
+        T front = null;
+        if (!isEmpty()) {
+            front = (T)firstNode.getData();
+            firstNode = firstNode.getNextNode();
+            if (firstNode == null) lastNode = null;
+            else firstNode.setPreviousNode(null);
+        } // end if
+
+        return front;
+    }
+
+    //removes the element from back
+    @Override
+    public T removeBack() {
+        T back = getBack();
+        if (!isEmpty()) {
+            back = (T)lastNode.getData();
+            lastNode = lastNode.getPreviousNode();
+            if (lastNode == null)
+                firstNode = null;
+            else
+                lastNode.setNextNode(null);
+        } // end if
+        return back;
+    }
+
+    //retrieves the front element
+    @Override
+    public T getFront() {
+        if(isEmpty())
+            return null;
+        else
+            return (T)firstNode.getData();
+    }
+
+    //retrieves the back element
+    @Override
+    public T getBack() {
+
+        if (isEmpty())
+            return null;
+        else
+            return (T)lastNode.getData();
+
+    }
+
+    //checks if the queue is empty
+    @Override
+    public boolean isEmpty() {
+        return firstNode == null && lastNode == null;
+    }
+
+    // clears the queue
+    @Override
+    public void clear() {
+        firstNode = null;
+        lastNode = null;
+
+    }
+
+
+
+} // end LinkedDeque

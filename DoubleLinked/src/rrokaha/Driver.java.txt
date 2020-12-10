@@ -1,0 +1,62 @@
+/**
+ * Rishant Rokaha
+ * Professor Vohra
+ * Data Structures and Algorithms
+ * 11 November 2002
+ * Assignment 8
+ */
+package rrokaha;
+
+import java.util.Scanner;
+
+public class Driver {
+
+    public static void main(String[] args) {
+
+
+        DequeInterface<String> Stocks = new LinkedDeque<>();
+
+        System.out.println("Is Deque Empty? "+ Stocks.isEmpty());
+        System.out.println("At Front : "+ Stocks.getFront());
+        System.out.println("At Back : "+ Stocks.getBack());
+        System.out.println();
+
+
+        Scanner input= new Scanner(System.in);
+        for(int i = 0 ; i < 3 ; i++){
+            System.out.println("Enter the stock to add at front : ");
+            String StocksFront = input.nextLine();
+            Stocks.addToFront(StocksFront);
+            System.out.println("Enter the stock to add at back : ");
+            String StocksBack = input.nextLine();
+            Stocks.addToBack(StocksBack);
+        }
+
+        System.out.println("Stocks added....................");
+        System.out.println("Is Deque Empty? "+ Stocks.isEmpty());
+        System.out.println("At Front : "+ Stocks.getFront());
+        System.out.println("At Back : "+ Stocks.getBack());
+        System.out.println();
+
+        System.out.println("Stocks removed from front and back......");
+        Stocks.removeFront();
+        Stocks.removeBack();
+
+        System.out.println("Is Deque Empty? "+ Stocks.isEmpty());
+        System.out.println("At Front : "+ Stocks.getFront());
+        System.out.println("At Back : "+ Stocks.getBack());
+        System.out.println();
+
+        System.out.println("Stocks cleared....................");
+        Stocks.clear();
+        System.out.println("Is Deque Empty? "+ Stocks.isEmpty());
+        System.out.println("At Front : "+ Stocks.getFront());
+        System.out.println("At Back : "+ Stocks.getBack());
+
+
+
+
+
+
+    }
+}

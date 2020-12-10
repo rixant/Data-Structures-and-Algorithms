@@ -1,0 +1,52 @@
+/**
+ * Rishant Rokaha
+ * Professor Vohra
+ * Data Structures and Algorithms
+ * 11 November 2002
+ * Assignment 8
+ */
+
+package rrokaha;
+
+public class DLNode<T> {
+
+    private T data; // deque entry
+    private DLNode nextNode; // link to next node
+    private DLNode previousNode; //link to previos nide
+
+
+    public DLNode(T data) {
+        this(data, null, null);
+    }
+
+
+    public DLNode(T data, DLNode<T> nextNode, DLNode<T> previousNode) {
+        this.data = data;
+        this.nextNode = nextNode;
+        this.previousNode = previousNode;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    public void setNextNode(DLNode<T> nextNode) {
+        this.nextNode = nextNode;
+    }
+
+    public void setPreviousNode(DLNode<T> previousNode) {
+        this.previousNode = previousNode;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public DLNode<T> getNextNode() {
+        return nextNode;
+    }
+
+    public DLNode<T> getPreviousNode() {
+        return previousNode;
+    }
+}

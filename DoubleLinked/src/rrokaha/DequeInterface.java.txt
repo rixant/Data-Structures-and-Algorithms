@@ -1,0 +1,37 @@
+/**
+ * Rishant Rokaha
+ * Professor Vohra
+ * Data Structures and Algorithms
+ * 11 November 2002
+ * Assignment 8
+ */
+
+package rrokaha;
+
+public interface DequeInterface<T> {
+
+    // adds the element at the front
+    public void addToFront(T newEntry);
+
+    //adds the element at the back
+    public void addToBack(T newEntry);
+
+    //removes the element from front
+    public T removeFront();
+
+    //removes the element from back
+    public T removeBack();
+
+    //retrieves the front element
+    public T getFront();
+
+    //retrieves the element from back
+    public T getBack();
+
+    //checks if the queue is empty
+    public boolean isEmpty();
+
+    // clears the queue
+    public void clear();
+
+}
