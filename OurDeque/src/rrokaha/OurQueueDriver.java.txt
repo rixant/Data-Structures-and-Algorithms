@@ -1,0 +1,37 @@
+/** Rishant Rokaha
+Professor Vohra
+Data Structures and Algorithms
+29 October 2020
+Assignment 7 : Part 1
+ */
+package rrokaha;
+
+public class OurQueueDriver<T> {
+
+    public static void main(String[] args) {
+        DequeInterface<String> RR = new OurQueue<>();
+        RR.addToFront("Science");
+        RR.addToFront("Mathematics");
+        RR.addToBack("Social Studies");
+        RR.addToFront("English");
+        RR.addToBack("Health & Population");
+
+        System.out.println();;
+        System.out.println("Lists Added.......");
+
+        System.out.println("-----------------------------------------");
+        System.out.println("The first element on the queue is : "+RR.getFront());
+        System.out.println("The last element on the queue is : "+ RR.getBack());
+        System.out.println();
+
+        System.out.println("First element removed ....... ");
+        RR.removeFront();
+        System.out.println("Last element removed .........");
+        RR.removeBack();
+        System.out.println();
+
+        System.out.println("The first on the queue is : "+ RR.getFront());
+        System.out.println("The last on the queue is : "+ RR.getBack());
+        System.out.println("-----------------------------------------");
+    }
+}

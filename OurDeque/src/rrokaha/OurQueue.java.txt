@@ -1,0 +1,60 @@
+/** Rishant Rokaha
+Professor Vohra
+Data Structures and Algorithms
+29 October 2020
+Assignment 7 : Part 1
+ */
+package rrokaha;
+
+import java.util.ArrayDeque;
+
+public class OurQueue<T> implements DequeInterface<T> {
+    ArrayDeque<T> deque;
+
+    public OurQueue(){
+        this.deque = new ArrayDeque<>();
+    }
+
+
+    @Override
+    public void addToFront(T newEntry) {
+        deque.addFirst(newEntry);
+    }
+
+    @Override
+    public void addToBack(T newEntry) {
+        deque.addLast(newEntry);
+
+    }
+
+    @Override
+    public T removeFront() {
+        return deque.removeFirst();
+    }
+
+    @Override
+    public T removeBack() {
+        return deque.removeLast();
+    }
+
+    @Override
+    public T getFront() {
+        return deque.getFirst();
+    }
+
+    @Override
+    public T getBack() {
+        return deque.getLast();
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return deque.isEmpty();
+    }
+
+    @Override
+    public void clear() {
+        deque.clear();
+
+    }
+}
