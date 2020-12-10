@@ -1,0 +1,42 @@
+/**Rishant Rokaha
+ * Professor Vohra
+ * Data Structures and Algorithms
+ * 28 November 2020
+ * Assignment 10
+ */
+package rrokaha;
+
+class Node<T>
+{
+    private T data;
+    private Node<T> next;
+
+
+    Node(T dataPortion)
+    {
+        this(dataPortion, null);
+    }
+
+    Node(T dataPortion, Node<T> nextNode)
+    {
+        data = dataPortion;
+        next = nextNode;
+    }
+
+
+    T getData() {
+        return data;
+    }
+
+    Node<T> getNext() {
+        return next;
+    }
+
+    void setData(T data) {
+        this.data = data;
+    }
+
+    void setNext(Node next) {
+        this.next = next;
+    }
+}
